@@ -8,3 +8,6 @@ DerivedData
 Build
 Podfile.lock
 Pods
+
+xcuserdata
+xcuserdata/*
