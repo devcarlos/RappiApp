@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		13B6A86A1D2755CC00E9713F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6A84B1D2755CC00E9713F /* AppDelegate.swift */; };
+		13B6A86B1D2755CC00E9713F /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6A84E1D2755CC00E9713F /* SplashViewController.swift */; };
+		13B6A86C1D2755CC00E9713F /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6A84F1D2755CC00E9713F /* CategoriesViewController.swift */; };
+		13B6A86D1D2755CC00E9713F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6A8501D2755CC00E9713F /* ListViewController.swift */; };
+		13B6A86E1D2755CC00E9713F /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6A8511D2755CC00E9713F /* AppViewController.swift */; };
+		13B6A86F1D2755CC00E9713F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6A8531D2755CC00E9713F /* Utils.swift */; };
+		13B6A8701D2755CC00E9713F /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6A8561D2755CC00E9713F /* BaseRouter.swift */; };
+		13B6A8721D2755CC00E9713F /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6A8581D2755CC00E9713F /* AppRouter.swift */; };
+		13B6A8741D2755CC00E9713F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6A85A1D2755CC00E9713F /* APIManager.swift */; };
+		13B6A8751D2755CC00E9713F /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6A85C1D2755CC00E9713F /* ErrorManager.swift */; };
+		13B6A8761D2755CC00E9713F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6A85E1D2755CC00E9713F /* App.swift */; };
+		13B6A8771D2755CC00E9713F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6A85F1D2755CC00E9713F /* Category.swift */; };
+		13B6A8781D2755CC00E9713F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B6A8611D2755CC00E9713F /* LaunchScreen.storyboard */; };
+		13B6A8791D2755CC00E9713F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B6A8631D2755CC00E9713F /* Main.storyboard */; };
+		13B6A87A1D2755CC00E9713F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B6A8661D2755CC00E9713F /* Assets.xcassets */; };
+		13BF6F791D279193008B8658 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BF6F781D279193008B8658 /* Image.swift */; };
+		13BF6F7C1D279F80008B8658 /* InternetHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BF6F7B1D279F80008B8658 /* InternetHandler.swift */; };
+		2E623FA6E3FD888AFB0E2DBD /* Pods_RappiApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F5A3225475AD0F13C640CE7 /* Pods_RappiApp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0CD240C589B229F77976F21F /* Pods-Jitensha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jitensha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jitensha/Pods-Jitensha.release.xcconfig"; sourceTree = "<group>"; };
+		133440EC1D0AB1AF00344C7A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Jitensha-bzlsuffwmrbnlybdqqvyjzjcugpi/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		13A348911D0719D500A45223 /* RappiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RappiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B6A84B1D2755CC00E9713F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		13B6A84E1D2755CC00E9713F /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		13B6A84F1D2755CC00E9713F /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		13B6A8501D2755CC00E9713F /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		13B6A8511D2755CC00E9713F /* AppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
+		13B6A8531D2755CC00E9713F /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		13B6A8561D2755CC00E9713F /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		13B6A8581D2755CC00E9713F /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		13B6A85A1D2755CC00E9713F /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIManager.swift; path = RappiApp/Classes/Managers/APIManager.swift; sourceTree = SOURCE_ROOT; };
+		13B6A85C1D2755CC00E9713F /* ErrorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		13B6A85E1D2755CC00E9713F /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		13B6A85F1D2755CC00E9713F /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		13B6A8621D2755CC00E9713F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		13B6A8641D2755CC00E9713F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		13B6A8661D2755CC00E9713F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		13B6A8671D2755CC00E9713F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13BF6F781D279193008B8658 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		13BF6F7B1D279F80008B8658 /* InternetHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetHandler.swift; sourceTree = "<group>"; };
+		1F5A3225475AD0F13C640CE7 /* Pods_RappiApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RappiApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FB5DC1D851CE1EC00D544EB /* Pods-RappiApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RappiApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RappiApp/Pods-RappiApp.release.xcconfig"; sourceTree = "<group>"; };
+		4112536DAD96718754529D22 /* Pods_JitenshaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JitenshaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		483F7AFFF31849D8973E9BE7 /* Pods-JitenshaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JitenshaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JitenshaTests/Pods-JitenshaTests.release.xcconfig"; sourceTree = "<group>"; };
+		6C7731B6BB025BEFCC60A3A9 /* Pods-Jitensha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jitensha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jitensha/Pods-Jitensha.release.xcconfig"; sourceTree = "<group>"; };
+		6DDA652F31719A8B9649C361 /* Pods-Jitensha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jitensha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jitensha/Pods-Jitensha.debug.xcconfig"; sourceTree = "<group>"; };
+		6F57087092C561F9DDE9DCCF /* Pods-RappiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RappiApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RappiApp/Pods-RappiApp.debug.xcconfig"; sourceTree = "<group>"; };
+		749D5FA79C782AB10396CF71 /* Pods_RappiAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RappiAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BD4949D1C98C9354B9A36AB /* Pods_Jitensha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jitensha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		808BCE86B1F3B1FC14707C58 /* Pods_JitenshaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JitenshaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8982E0D0280425BB4D6E6288 /* Pods-JitenshaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JitenshaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JitenshaTests/Pods-JitenshaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C439995487E6BC30FE37310D /* Pods-JitenshaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JitenshaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JitenshaTests/Pods-JitenshaTests.release.xcconfig"; sourceTree = "<group>"; };
+		E76E875F589196792107EEE7 /* Pods_Jitensha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jitensha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F35A15AE6A8D9BDD49C77D17 /* Pods-JitenshaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JitenshaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JitenshaTests/Pods-JitenshaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F7B5903E04055ABF40DA8785 /* Pods-Jitensha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jitensha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jitensha/Pods-Jitensha.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		13A3488E1D0719D500A45223 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E623FA6E3FD888AFB0E2DBD /* Pods_RappiApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		135D1C9A1D0AB2F300B6A82E /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				F7B5903E04055ABF40DA8785 /* Pods-Jitensha.debug.xcconfig */,
+				6C7731B6BB025BEFCC60A3A9 /* Pods-Jitensha.release.xcconfig */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		13A348881D0719D500A45223 = {
+			isa = PBXGroup;
+			children = (
+				13B6A84A1D2755CC00E9713F /* RappiApp */,
+				13A348921D0719D500A45223 /* Products */,
+				545D0B4EB38FC9B7392B8944 /* Pods */,
+				2223392F7FEB9A777715317D /* Frameworks */,
+				135D1C9A1D0AB2F300B6A82E /* Recovered References */,
+			);
+			sourceTree = "<group>";
+		};
+		13A348921D0719D500A45223 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13A348911D0719D500A45223 /* RappiApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		13B6A84A1D2755CC00E9713F /* RappiApp */ = {
+			isa = PBXGroup;
+			children = (
+				13B6A84B1D2755CC00E9713F /* AppDelegate.swift */,
+				13B6A84C1D2755CC00E9713F /* Classes */,
+				13B6A8651D2755CC00E9713F /* Support */,
+			);
+			path = RappiApp;
+			sourceTree = "<group>";
+		};
+		13B6A84C1D2755CC00E9713F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				13B6A84D1D2755CC00E9713F /* Controllers */,
+				13B6A8521D2755CC00E9713F /* Extensions */,
+				13B6A8541D2755CC00E9713F /* Managers */,
+				13B6A85D1D2755CC00E9713F /* Models */,
+				13B6A8601D2755CC00E9713F /* Views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		13B6A84D1D2755CC00E9713F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				13B6A84E1D2755CC00E9713F /* SplashViewController.swift */,
+				13B6A84F1D2755CC00E9713F /* CategoriesViewController.swift */,
+				13B6A8501D2755CC00E9713F /* ListViewController.swift */,
+				13B6A8511D2755CC00E9713F /* AppViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		13B6A8521D2755CC00E9713F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				13B6A8531D2755CC00E9713F /* Utils.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		13B6A8541D2755CC00E9713F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				13BF6F7A1D279F6F008B8658 /* Internet */,
+				13B6A8551D2755CC00E9713F /* API */,
+				13B6A85B1D2755CC00E9713F /* Error */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		13B6A8551D2755CC00E9713F /* API */ = {
+			isa = PBXGroup;
+			children = (
+				13B6A85A1D2755CC00E9713F /* APIManager.swift */,
+				13B6A8561D2755CC00E9713F /* BaseRouter.swift */,
+				13B6A8581D2755CC00E9713F /* AppRouter.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		13B6A85B1D2755CC00E9713F /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				13B6A85C1D2755CC00E9713F /* ErrorManager.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		13B6A85D1D2755CC00E9713F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				13B6A85E1D2755CC00E9713F /* App.swift */,
+				13B6A85F1D2755CC00E9713F /* Category.swift */,
+				13BF6F781D279193008B8658 /* Image.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		13B6A8601D2755CC00E9713F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				13B6A8611D2755CC00E9713F /* LaunchScreen.storyboard */,
+				13B6A8631D2755CC00E9713F /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		13B6A8651D2755CC00E9713F /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				13B6A8661D2755CC00E9713F /* Assets.xcassets */,
+				13B6A8671D2755CC00E9713F /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		13BF6F7A1D279F6F008B8658 /* Internet */ = {
+			isa = PBXGroup;
+			children = (
+				13BF6F7B1D279F80008B8658 /* InternetHandler.swift */,
+			);
+			name = Internet;
+			sourceTree = "<group>";
+		};
+		2223392F7FEB9A777715317D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				133440EC1D0AB1AF00344C7A /* Alamofire.framework */,
+				E76E875F589196792107EEE7 /* Pods_Jitensha.framework */,
+				4112536DAD96718754529D22 /* Pods_JitenshaTests.framework */,
+				7BD4949D1C98C9354B9A36AB /* Pods_Jitensha.framework */,
+				808BCE86B1F3B1FC14707C58 /* Pods_JitenshaTests.framework */,
+				1F5A3225475AD0F13C640CE7 /* Pods_RappiApp.framework */,
+				749D5FA79C782AB10396CF71 /* Pods_RappiAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		545D0B4EB38FC9B7392B8944 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F35A15AE6A8D9BDD49C77D17 /* Pods-JitenshaTests.debug.xcconfig */,
+				C439995487E6BC30FE37310D /* Pods-JitenshaTests.release.xcconfig */,
+				8982E0D0280425BB4D6E6288 /* Pods-JitenshaTests.debug.xcconfig */,
+				483F7AFFF31849D8973E9BE7 /* Pods-JitenshaTests.release.xcconfig */,
+				6DDA652F31719A8B9649C361 /* Pods-Jitensha.debug.xcconfig */,
+				0CD240C589B229F77976F21F /* Pods-Jitensha.release.xcconfig */,
+				6F57087092C561F9DDE9DCCF /* Pods-RappiApp.debug.xcconfig */,
+				1FB5DC1D851CE1EC00D544EB /* Pods-RappiApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		13A348901D0719D500A45223 /* RappiApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13A348BC1D0719D500A45223 /* Build configuration list for PBXNativeTarget "RappiApp" */;
+			buildPhases = (
+				679705A76628026874FF5A24 /* [CP] Check Pods Manifest.lock */,
+				13A3488D1D0719D500A45223 /* Sources */,
+				13A3488E1D0719D500A45223 /* Frameworks */,
+				13A3488F1D0719D500A45223 /* Resources */,
+				35FF788E520D8704EB29A9FE /* [CP] Embed Pods Frameworks */,
+				43C5F58019BDCD76DF12DBB3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RappiApp;
+			productName = Jitensha;
+			productReference = 13A348911D0719D500A45223 /* RappiApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		13A348891D0719D500A45223 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Carlos Alcala";
+				TargetAttributes = {
+					13A348901D0719D500A45223 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 13A3488C1D0719D500A45223 /* Build configuration list for PBXProject "RappiApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 13A348881D0719D500A45223;
+			productRefGroup = 13A348921D0719D500A45223 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13A348901D0719D500A45223 /* RappiApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		13A3488F1D0719D500A45223 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13B6A8791D2755CC00E9713F /* Main.storyboard in Resources */,
+				13B6A87A1D2755CC00E9713F /* Assets.xcassets in Resources */,
+				13B6A8781D2755CC00E9713F /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		35FF788E520D8704EB29A9FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RappiApp/Pods-RappiApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		43C5F58019BDCD76DF12DBB3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RappiApp/Pods-RappiApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		679705A76628026874FF5A24 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		13A3488D1D0719D500A45223 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13B6A8741D2755CC00E9713F /* APIManager.swift in Sources */,
+				13B6A8721D2755CC00E9713F /* AppRouter.swift in Sources */,
+				13B6A8751D2755CC00E9713F /* ErrorManager.swift in Sources */,
+				13BF6F7C1D279F80008B8658 /* InternetHandler.swift in Sources */,
+				13B6A86B1D2755CC00E9713F /* SplashViewController.swift in Sources */,
+				13B6A86A1D2755CC00E9713F /* AppDelegate.swift in Sources */,
+				13B6A8771D2755CC00E9713F /* Category.swift in Sources */,
+				13BF6F791D279193008B8658 /* Image.swift in Sources */,
+				13B6A8761D2755CC00E9713F /* App.swift in Sources */,
+				13B6A86D1D2755CC00E9713F /* ListViewController.swift in Sources */,
+				13B6A86F1D2755CC00E9713F /* Utils.swift in Sources */,
+				13B6A86E1D2755CC00E9713F /* AppViewController.swift in Sources */,
+				13B6A86C1D2755CC00E9713F /* CategoriesViewController.swift in Sources */,
+				13B6A8701D2755CC00E9713F /* BaseRouter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		13B6A8611D2755CC00E9713F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13B6A8621D2755CC00E9713F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		13B6A8631D2755CC00E9713F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13B6A8641D2755CC00E9713F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		13A348BA1D0719D500A45223 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		13A348BB1D0719D500A45223 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		13A348BD1D0719D500A45223 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F57087092C561F9DDE9DCCF /* Pods-RappiApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "$(SRCROOT)/RappiApp/Support/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kurrentap.RappiApp;
+				PRODUCT_NAME = RappiApp;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		13A348BE1D0719D500A45223 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FB5DC1D851CE1EC00D544EB /* Pods-RappiApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "$(SRCROOT)/RappiApp/Support/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kurrentap.RappiApp;
+				PRODUCT_NAME = RappiApp;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		13A3488C1D0719D500A45223 /* Build configuration list for PBXProject "RappiApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13A348BA1D0719D500A45223 /* Debug */,
+				13A348BB1D0719D500A45223 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13A348BC1D0719D500A45223 /* Build configuration list for PBXNativeTarget "RappiApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13A348BD1D0719D500A45223 /* Debug */,
+				13A348BE1D0719D500A45223 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 13A348891D0719D500A45223 /* Project object */;
+}

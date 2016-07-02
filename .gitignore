@@ -1,0 +1,10 @@
+# General
+*.swp
+*.swo
+*.rbo
+*.gem
+.DS_Store
+DerivedData
+Build
+Podfile.lock
+Pods
