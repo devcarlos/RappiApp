@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlertBar
 import Alamofire
 import ReachabilitySwift
 
@@ -49,10 +50,10 @@ class SplashViewController: UIViewController, UITextFieldDelegate {
         
         //Internet ONLINE then we callback the API load
         if InternetHandler.shared.isReachable() {
-            
-            //TODO: show ONLINE
-            
             NSLog("ONLINE")
+            
+            //show online alert
+            AlertBar.show(.Success, message: "Conectado a Internet.")
             
             //callback to load API data and save to Realm DB
             self.request = APIManager.sharedInstance.GetApps { [unowned self]
@@ -75,10 +76,10 @@ class SplashViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         } else {
-            //TODO: show OFFLINE
-            
             NSLog("OFFLINE")
-        
+
+            //show offline alert
+            AlertBar.show(.Warning, message: "Internet no funciona usando datos de cache.")
         }
     }
         

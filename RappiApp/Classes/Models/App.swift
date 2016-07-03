@@ -8,90 +8,58 @@
 
 
 import Foundation
-//import ObjectMapper
-import RealmSwift
-import Realm
+import ObjectMapper
 
 
 private let ID_KEY = "id.attributes.im:id"
 private let NAME_KEY = "im:name.label"
-private let SUM_KEY = "summary"
+private let SUM_KEY = "summary.label"
 private let COPY_KEY = "rights.label"
-private let PRICE_KEY = "im:price"
-private let AMOUNT_KEY = "attributes.amount"
-private let CURR_KEY = "attributes.currency"
+private let PRICE_KEY = "im:price.attributes.amount"
 private let TITLE_KEY = "title.label"
-private let IMAGE_KEY = "im:image"
-private let LINK_KEY = "link"
-private let DATE_KEY = "im:releaseDate"
-private let CAT_KEY = "category"
-
-struct Price {//: Mappable {
-    var amount: Double?
-    var currency: String = ""
-    
-//    init?(_ map: Map) {
-//        
-//    }
-//    
-//    mutating func mapping(map: Map) {
-//        amount      <- map[AMOUNT_KEY]
-//        currency    <- map[CURR_KEY]
-//    }
-}
-
+private let IMAGE_KEY = "im:image.2.label"
+private let LINK_KEY = "link.attributes.href"
+private let DATE_KEY = "im:releaseDate.attributes.label"
+private let CAT_KEY = "category.attributes.label"
 
 //App Model Class
-public class App: Object {
+public class App: Mappable {
     
     //MARK : Properties
     
-    dynamic var id: String = ""
-    dynamic var name: String = ""
-    dynamic var summary: String = ""
-    dynamic var copyright: String = ""
-    dynamic var title: String = ""
-    var images = List<Image>()
-    
-    var category: Category?
-    var price: Price?
+    var id: String = ""
+    var name: String = ""
+    var summary: String = ""
+    var copyright: String = ""
+    var title: String = ""
+    var imageURL: String = ""
+    var category: String = ""
+    var linkURL: String = ""
+    var price: Float = 0.0
     var releaseDate: NSDate?
     
-    override public static func primaryKey() -> String? {
-        return "id"
+    required convenience public init?(_ map: Map) {
+        self.init()
     }
-    
-//    required convenience public init?(_ map: Map) {
-//        self.init()
-//        
-////        mapping(map)
-//    }
     
     //MARK : Mapping
     
-//    public func mapping(map: Map) {
-//        id          <- map[ID_KEY]
-//        name        <- map[NAME_KEY]
-//        summary     <- map[SUM_KEY]
-//        copyright   <- map[COPY_KEY]
-//        title       <- map[TITLE_KEY]
-//        images      <- map[IMAGE_KEY]
-//        category    <- map[CAT_KEY]
-//        price       <- map[PRICE_KEY]
-//        releaseDate <- (map[DATE_KEY], DateTransform())
-//    }
+    public func mapping(map: Map) {
+        id          <- map[ID_KEY]
+        name        <- map[NAME_KEY]
+        summary     <- map[SUM_KEY]
+        copyright   <- map[COPY_KEY]
+        title       <- map[TITLE_KEY]
+        category    <- map[CAT_KEY]
+        price       <- map[PRICE_KEY]
+        imageURL    <- map[IMAGE_KEY]
+        linkURL     <- map[LINK_KEY]
+        releaseDate <- (map[DATE_KEY], DateTransform())
+    }
     
     //MARK : init functions
     
-    required public init() {
-        super.init()
-    }
+    init(){
     
-    required public init(value: AnyObject, schema: RLMSchema) {
-        super.init()
-    }
-    
-    required public init(realm: RLMRealm, schema: RLMObjectSchema) {
-        super.init()
     }
 }

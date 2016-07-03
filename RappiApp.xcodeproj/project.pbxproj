@@ -18,12 +18,23 @@
 		13B6A8741D2755CC00E9713F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6A85A1D2755CC00E9713F /* APIManager.swift */; };
 		13B6A8751D2755CC00E9713F /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6A85C1D2755CC00E9713F /* ErrorManager.swift */; };
 		13B6A8761D2755CC00E9713F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6A85E1D2755CC00E9713F /* App.swift */; };
-		13B6A8771D2755CC00E9713F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6A85F1D2755CC00E9713F /* Category.swift */; };
 		13B6A8781D2755CC00E9713F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B6A8611D2755CC00E9713F /* LaunchScreen.storyboard */; };
 		13B6A8791D2755CC00E9713F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B6A8631D2755CC00E9713F /* Main.storyboard */; };
 		13B6A87A1D2755CC00E9713F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B6A8661D2755CC00E9713F /* Assets.xcassets */; };
-		13BF6F791D279193008B8658 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BF6F781D279193008B8658 /* Image.swift */; };
 		13BF6F7C1D279F80008B8658 /* InternetHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BF6F7B1D279F80008B8658 /* InternetHandler.swift */; };
+		13D925F71D287620005B44A6 /* RappiApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13D925F51D287620005B44A6 /* RappiApp.xcdatamodeld */; };
+		13D925FD1D2878CA005B44A6 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D925F91D2878A4005B44A6 /* AppModel.swift */; };
+		13D925FE1D2878CD005B44A6 /* AppModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D925FA1D2878A4005B44A6 /* AppModel+CoreDataProperties.swift */; };
+		13D925FF1D287944005B44A6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D925F21D28724F005B44A6 /* DataManager.swift */; };
+		13D926011D28796B005B44A6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D926001D28796B005B44A6 /* CoreData.framework */; };
+		13D926051D288E40005B44A6 /* AppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D926031D288E40005B44A6 /* AppCell.swift */; };
+		13D926061D288E40005B44A6 /* AppCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13D926041D288E40005B44A6 /* AppCell.xib */; };
+		13EC09181D28E8A00028521B /* CollectionAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EC09161D28E8A00028521B /* CollectionAppCell.swift */; };
+		13EC09191D28E8A00028521B /* CollectionAppCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13EC09171D28E8A00028521B /* CollectionAppCell.xib */; };
+		13EC091F1D28F6F80028521B /* CustomDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EC091B1D28F6F80028521B /* CustomDismissAnimationController.swift */; };
+		13EC09201D28F6F80028521B /* CustomInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EC091C1D28F6F80028521B /* CustomInteractionController.swift */; };
+		13EC09211D28F6F80028521B /* CustomNavigationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EC091D1D28F6F80028521B /* CustomNavigationAnimationController.swift */; };
+		13EC09221D28F6F80028521B /* CustomPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EC091E1D28F6F80028521B /* CustomPresentAnimationController.swift */; };
 		2E623FA6E3FD888AFB0E2DBD /* Pods_RappiApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F5A3225475AD0F13C640CE7 /* Pods_RappiApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,13 +53,24 @@
 		13B6A85A1D2755CC00E9713F /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIManager.swift; path = RappiApp/Classes/Managers/APIManager.swift; sourceTree = SOURCE_ROOT; };
 		13B6A85C1D2755CC00E9713F /* ErrorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 		13B6A85E1D2755CC00E9713F /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		13B6A85F1D2755CC00E9713F /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		13B6A8621D2755CC00E9713F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13B6A8641D2755CC00E9713F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13B6A8661D2755CC00E9713F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13B6A8671D2755CC00E9713F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		13BF6F781D279193008B8658 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		13BF6F7B1D279F80008B8658 /* InternetHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetHandler.swift; sourceTree = "<group>"; };
+		13D925F21D28724F005B44A6 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		13D925F61D287620005B44A6 /* RappiApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RappiApp.xcdatamodel; sourceTree = "<group>"; };
+		13D925F91D2878A4005B44A6 /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppModel.swift; path = Models/Managed/AppModel.swift; sourceTree = "<group>"; };
+		13D925FA1D2878A4005B44A6 /* AppModel+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AppModel+CoreDataProperties.swift"; path = "Models/Managed/AppModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		13D926001D28796B005B44A6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		13D926031D288E40005B44A6 /* AppCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppCell.swift; path = Cells/AppCell.swift; sourceTree = "<group>"; };
+		13D926041D288E40005B44A6 /* AppCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppCell.xib; path = Cells/AppCell.xib; sourceTree = "<group>"; };
+		13EC09161D28E8A00028521B /* CollectionAppCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionAppCell.swift; path = Cells/CollectionAppCell.swift; sourceTree = "<group>"; };
+		13EC09171D28E8A00028521B /* CollectionAppCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CollectionAppCell.xib; path = Cells/CollectionAppCell.xib; sourceTree = "<group>"; };
+		13EC091B1D28F6F80028521B /* CustomDismissAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomDismissAnimationController.swift; path = Transitions/CustomDismissAnimationController.swift; sourceTree = "<group>"; };
+		13EC091C1D28F6F80028521B /* CustomInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomInteractionController.swift; path = Transitions/CustomInteractionController.swift; sourceTree = "<group>"; };
+		13EC091D1D28F6F80028521B /* CustomNavigationAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomNavigationAnimationController.swift; path = Transitions/CustomNavigationAnimationController.swift; sourceTree = "<group>"; };
+		13EC091E1D28F6F80028521B /* CustomPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPresentAnimationController.swift; path = Transitions/CustomPresentAnimationController.swift; sourceTree = "<group>"; };
 		1F5A3225475AD0F13C640CE7 /* Pods_RappiApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RappiApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FB5DC1D851CE1EC00D544EB /* Pods-RappiApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RappiApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RappiApp/Pods-RappiApp.release.xcconfig"; sourceTree = "<group>"; };
 		4112536DAD96718754529D22 /* Pods_JitenshaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JitenshaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13D926011D28796B005B44A6 /* CoreData.framework in Frameworks */,
 				2E623FA6E3FD888AFB0E2DBD /* Pods_RappiApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,6 +142,7 @@
 		13B6A84C1D2755CC00E9713F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				13EC091A1D28F6DC0028521B /* Transitions */,
 				13B6A84D1D2755CC00E9713F /* Controllers */,
 				13B6A8521D2755CC00E9713F /* Extensions */,
 				13B6A8541D2755CC00E9713F /* Managers */,
@@ -150,6 +174,7 @@
 		13B6A8541D2755CC00E9713F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				13D925F11D28724F005B44A6 /* Data */,
 				13BF6F7A1D279F6F008B8658 /* Internet */,
 				13B6A8551D2755CC00E9713F /* API */,
 				13B6A85B1D2755CC00E9713F /* Error */,
@@ -178,9 +203,8 @@
 		13B6A85D1D2755CC00E9713F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				13D925F41D28726D005B44A6 /* CoreData */,
 				13B6A85E1D2755CC00E9713F /* App.swift */,
-				13B6A85F1D2755CC00E9713F /* Category.swift */,
-				13BF6F781D279193008B8658 /* Image.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -188,6 +212,7 @@
 		13B6A8601D2755CC00E9713F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				13D926021D288E1B005B44A6 /* Cells */,
 				13B6A8611D2755CC00E9713F /* LaunchScreen.storyboard */,
 				13B6A8631D2755CC00E9713F /* Main.storyboard */,
 			);
@@ -211,9 +236,59 @@
 			name = Internet;
 			sourceTree = "<group>";
 		};
+		13D925F11D28724F005B44A6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				13D925F21D28724F005B44A6 /* DataManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		13D925F41D28726D005B44A6 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				13D925F81D287892005B44A6 /* Managed */,
+				13D925F51D287620005B44A6 /* RappiApp.xcdatamodeld */,
+			);
+			name = CoreData;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		13D925F81D287892005B44A6 /* Managed */ = {
+			isa = PBXGroup;
+			children = (
+				13D925F91D2878A4005B44A6 /* AppModel.swift */,
+				13D925FA1D2878A4005B44A6 /* AppModel+CoreDataProperties.swift */,
+			);
+			name = Managed;
+			sourceTree = "<group>";
+		};
+		13D926021D288E1B005B44A6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				13D926031D288E40005B44A6 /* AppCell.swift */,
+				13D926041D288E40005B44A6 /* AppCell.xib */,
+				13EC09161D28E8A00028521B /* CollectionAppCell.swift */,
+				13EC09171D28E8A00028521B /* CollectionAppCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		13EC091A1D28F6DC0028521B /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				13EC091B1D28F6F80028521B /* CustomDismissAnimationController.swift */,
+				13EC091C1D28F6F80028521B /* CustomInteractionController.swift */,
+				13EC091D1D28F6F80028521B /* CustomNavigationAnimationController.swift */,
+				13EC091E1D28F6F80028521B /* CustomPresentAnimationController.swift */,
+			);
+			name = Transitions;
+			sourceTree = "<group>";
+		};
 		2223392F7FEB9A777715317D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				13D926001D28796B005B44A6 /* CoreData.framework */,
 				133440EC1D0AB1AF00344C7A /* Alamofire.framework */,
 				E76E875F589196792107EEE7 /* Pods_Jitensha.framework */,
 				4112536DAD96718754529D22 /* Pods_JitenshaTests.framework */,
@@ -302,6 +377,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B6A8791D2755CC00E9713F /* Main.storyboard in Resources */,
+				13D926061D288E40005B44A6 /* AppCell.xib in Resources */,
+				13EC09191D28E8A00028521B /* CollectionAppCell.xib in Resources */,
 				13B6A87A1D2755CC00E9713F /* Assets.xcassets in Resources */,
 				13B6A8781D2755CC00E9713F /* LaunchScreen.storyboard in Resources */,
 			);
@@ -363,17 +440,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B6A8741D2755CC00E9713F /* APIManager.swift in Sources */,
+				13EC09181D28E8A00028521B /* CollectionAppCell.swift in Sources */,
+				13D925FF1D287944005B44A6 /* DataManager.swift in Sources */,
 				13B6A8721D2755CC00E9713F /* AppRouter.swift in Sources */,
 				13B6A8751D2755CC00E9713F /* ErrorManager.swift in Sources */,
 				13BF6F7C1D279F80008B8658 /* InternetHandler.swift in Sources */,
 				13B6A86B1D2755CC00E9713F /* SplashViewController.swift in Sources */,
 				13B6A86A1D2755CC00E9713F /* AppDelegate.swift in Sources */,
-				13B6A8771D2755CC00E9713F /* Category.swift in Sources */,
-				13BF6F791D279193008B8658 /* Image.swift in Sources */,
+				13EC09211D28F6F80028521B /* CustomNavigationAnimationController.swift in Sources */,
 				13B6A8761D2755CC00E9713F /* App.swift in Sources */,
+				13EC09201D28F6F80028521B /* CustomInteractionController.swift in Sources */,
+				13EC09221D28F6F80028521B /* CustomPresentAnimationController.swift in Sources */,
+				13EC091F1D28F6F80028521B /* CustomDismissAnimationController.swift in Sources */,
+				13D926051D288E40005B44A6 /* AppCell.swift in Sources */,
 				13B6A86D1D2755CC00E9713F /* ListViewController.swift in Sources */,
 				13B6A86F1D2755CC00E9713F /* Utils.swift in Sources */,
 				13B6A86E1D2755CC00E9713F /* AppViewController.swift in Sources */,
+				13D925F71D287620005B44A6 /* RappiApp.xcdatamodeld in Sources */,
+				13D925FE1D2878CD005B44A6 /* AppModel+CoreDataProperties.swift in Sources */,
+				13D925FD1D2878CA005B44A6 /* AppModel.swift in Sources */,
 				13B6A86C1D2755CC00E9713F /* CategoriesViewController.swift in Sources */,
 				13B6A8701D2755CC00E9713F /* BaseRouter.swift in Sources */,
 			);
@@ -534,6 +619,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		13D925F51D287620005B44A6 /* RappiApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				13D925F61D287620005B44A6 /* RappiApp.xcdatamodel */,
+			);
+			currentVersion = 13D925F61D287620005B44A6 /* RappiApp.xcdatamodel */;
+			name = RappiApp.xcdatamodeld;
+			path = Models/CoreData/RappiApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 13A348891D0719D500A45223 /* Project object */;
 }

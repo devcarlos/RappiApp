@@ -1,6 +1,6 @@
 # RappiApp
 
-RappiApp is a Test Project for Rappi
+Test Project App for Rappi
 
 ## Features
 

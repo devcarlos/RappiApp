@@ -8,6 +8,21 @@
 
 import UIKit
 
+extension ListViewController : UICollectionViewDelegateFlowLayout {
+    func collectionView(collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                               sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        
+        return CGSize(width: 180, height: 180)
+    }
+    
+    func collectionView(collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                               insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(10, 10, 10, 10)
+    }
+}
+
 class ListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource  {
     
     //MARK : IBOutlets
@@ -17,7 +32,8 @@ class ListViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     //MARK : Properties
     
-    var apps:[String] = ["App 1", "App 2", "App 3"]
+    var apps:[App] = []
+    var category:String = ""
     
     //MARK : ViewController Lifetime
     
@@ -32,7 +48,9 @@ class ListViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         // Do any additional setup after loading the view.
         
+        //configurations
         self.configureUI()
+        self.configureTable()
         
         //load API data
         self.loadData()
@@ -51,24 +69,38 @@ class ListViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func configureUI() {
         //        self.view.backgroundColor = UIColor(hex: "#020617")
-        self.tableView.backgroundColor = UIColor.clearColor()
-        self.collectionView.backgroundColor = UIColor.clearColor()
         
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad  {
-            tableView.hidden = true
-            collectionView.hidden = false
+            self.collectionView.backgroundColor = UIColor.clearColor()
+            self.tableView.hidden = true
+            self.collectionView.hidden = false
         } else {
-            tableView.hidden = false
-            collectionView.hidden = true
+            self.tableView.backgroundColor = UIColor.clearColor()
+            self.tableView.hidden = false
+            self.collectionView.hidden = true
         }
     }
     
+    func configureTable() {
+        self.collectionView.registerNib(UINib(nibName: "CollectionAppCell", bundle: nil), forCellWithReuseIdentifier: "CollectionAppCell")
+        self.tableView.registerNib(UINib(nibName: "AppCell", bundle: nil), forCellReuseIdentifier: "AppCell")
+    }
+
     
     //MARK : Load Data
     func loadData() {
+        //--------------------------------
+        // ------ LOAD CORE  DATA  -------
+        //--------------------------------
         
-        self.collectionView.reloadData()
-        self.tableView.reloadData()
+        self.apps = DataManager.fetchAppsByCategory(self.category)
+        NSLog("APPS: \(self.apps)")
+        
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad  {
+            self.collectionView.reloadData()
+        } else {
+            self.tableView.reloadData()
+        }
     }
     
     //MARK : TableView DataSource
@@ -79,14 +111,14 @@ class ListViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("AppCell", forIndexPath: indexPath) 
+        let cell = tableView.dequeueReusableCellWithIdentifier("AppCell", forIndexPath: indexPath) as! AppCell
         
         //        cell.backgroundColor = UIColor(hex: "#020617")
         cell.contentView.backgroundColor = UIColor.clearColor()
         
-        let category = apps[indexPath.row] as String
+        let app = apps[indexPath.row] as App
         
-        cell.textLabel?.text = category
+        cell.configure(app)
         
         return cell
     }
@@ -94,11 +126,10 @@ class ListViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         NSLog("SELECTED: \(indexPath.row)")
         
-        //        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Alarm") as! AlarmViewController
-        //        vc.modalTransitionStyle = .CrossDissolve
-        //        vc.alarm = apps[indexPath.row]
-        //        vc.isUpdating = true
-        //        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("App") as! AppViewController
+        vc.modalTransitionStyle = .CrossDissolve
+        vc.app = apps[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     
@@ -118,23 +149,25 @@ class ListViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AppCollectionCell", forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionAppCell", forIndexPath: indexPath) as! CollectionAppCell
         
         //        cell.backgroundColor = UIColor(hex: "#020617")
-        cell.backgroundColor = UIColor.yellowColor()
+        cell.contentView.backgroundColor = UIColor.clearColor()
         
-        //        let category = categories[indexPath.row] as Category
-        //
-        //        cell.textLabel?.text = category.name
+        let app = apps[indexPath.row] as App
+        
+        cell.configure(app)
         
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         NSLog("SELECTED: \(indexPath.row)")
+        
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("App") as! AppViewController
+        vc.modalTransitionStyle = .CoverVertical
+        vc.app = apps[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-    
-    
 }
 

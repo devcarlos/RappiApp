@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import RealmSwift
 
-class CategoriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CategoriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
 
     //MARK : IBOutlets
     
@@ -18,8 +17,10 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     //MARK : Properties
     
-    var categories:[Category] = []
-//    var categories:[String] = ["Cat 1", "Cat 2", "Cat 3"]
+    let customNavigationAnimationController = CustomNavigationAnimationController()
+    let customInteractionController = CustomInteractionController()
+
+    var categories:[String] = []
     
     //MARK : ViewController Lifetime
     
@@ -31,6 +32,9 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //transition delegate
+        self.navigationController?.delegate = self
         
         // Do any additional setup after loading the view.
         
@@ -59,41 +63,12 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     //MARK : Load Data
     func loadData() {
+        //--------------------------------
+        // ------ LOAD CORE  DATA  -------
+        //--------------------------------
         
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
-        // used Realm to retrieve objects from DB
-        // data is always retrieved from DB and not directly from API callback
-        // this way we can ALWAYS display the apps from last API data cache
-        
-        let realm = try! Realm()
-        
-        do {
-            try realm.write() {
-                
-                realm.refresh()
-                categories = Array(realm.objects(Category.self))
-                
-            }
-        } catch let error as NSError  {
-            print("Error: \(error), \(error.userInfo)")
-        }
-        
-        
-        
-        
-        print("CATEGORIES: \(categories)")
-        
-//let temp = realm.objects(App.self).filter("name BEGINSWITH 'P'")
-//        let categories = Array(temp)
-//
-//        NSLog("CATEGORIES: \(categories)")
-//        
-        for cat in categories {
-            print("NAME: \(cat.name)")
-        }
-        
-        
+        self.categories = DataManager.fetchCategories()
+        NSLog("CATEGORIES: \(self.categories)")
         self.tableView.reloadData()
     }
     
@@ -110,10 +85,9 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
 //        cell.backgroundColor = UIColor(hex: "#020617")
         cell.contentView.backgroundColor = UIColor.clearColor()
         
-        let category = categories[indexPath.row] as Category
-//        let category = categories[indexPath.row] as String
+        let category = categories[indexPath.row] as String
         
-        cell.textLabel?.text = category.name
+        cell.textLabel?.text = category
         
         return cell
     }
@@ -121,15 +95,22 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         NSLog("SELECTED: \(indexPath.row)")
         
-//        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Alarm") as! AlarmViewController
-//        vc.modalTransitionStyle = .CrossDissolve
-//        vc.alarm = categories[indexPath.row]
-//        vc.isUpdating = true
-//        self.navigationController?.pushViewController(vc, animated: true)
-        
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("List") as! ListViewController
+        vc.category = categories[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    //MARK : Transitions
     
-    //MARK : Actions
-
+    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if operation == .Push {
+            customInteractionController.attachToViewController(toVC)
+        }
+        customNavigationAnimationController.reverse = operation == .Pop
+        return customNavigationAnimationController
+    }
+    
+    func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return customInteractionController.transitionInProgress ? customInteractionController : nil
+    }
 }

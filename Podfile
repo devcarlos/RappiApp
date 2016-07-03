@@ -4,8 +4,9 @@ use_frameworks!
 
 target 'RappiApp' do
     pod 'Alamofire', '~> 3.4'
+    pod 'AlamofireImage', '~> 2.0'
     pod 'ObjectMapper'
     pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
-    pod 'RealmSwift'
     pod 'ReachabilitySwift'
+    pod "AlertBar"
 end

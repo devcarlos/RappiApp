@@ -8,9 +8,8 @@
 
 import Foundation
 import Alamofire
-//import SwiftyJSON
-import RealmSwift
-//import ObjectMapper
+import SwiftyJSON
+import ObjectMapper
 
 public class APIManager {
     
@@ -30,79 +29,52 @@ public class APIManager {
     // MARK: apps API
     
     func GetApps(completion: (apps: [App], error: NSError?) -> ()) -> Request {
-        let limit:Int = 50
+        let limit:Int = 20
         let router = AppRouter(endpoint: AppEndpoint.GetApps(limit: limit))
         
         //validate codes including those from API for custom errors
-        let validStatusCodes: Range<Int> = 200...403
         return manager.request(router)
-            .validate(statusCode: validStatusCodes)
+            .validate()
             .responseJSON(completionHandler: {
                 (response) -> Void in
                 
-                let statusCode:Int = (response.response?.statusCode)!
+                NSLog("API Success")
                 
-                NSLog("STATUS CODE: \(statusCode)")
+                let jsonData = response.result.value as! JSONDictionary
                 
-                switch statusCode {
-                case 200 ... 299:
-                    NSLog("API Success")
-                    
-                    let jsonData = response.result.value as! JSONDictionary
-                    
-//                    NSLog("JSON: \(jsonData)")
-                    
-                    if let feed = jsonData["feed"] as? JSONDictionary,
-                        let results = feed["entry"] as? [JSONDictionary] {
+                if let feed = jsonData["feed"] as? JSONDictionary,
+                    let results = feed["entry"] as? [JSONDictionary] {
 
-                        var apps:[App] = []
-                        
-                        NSLog("JSON: \(results)")
-                        
-                        //save Session Object to Realm DB
-                        let realm = try! Realm()
-                        do {
-                            try realm.write() {
-                                
-                                for item in results {
-                                    
-                                    NSLog("ITEM: \(item)")
-                                
-//                                    if let app = Mapper<App>().map(item) {
-//                                        realm.add(app, update: true)
-//                                        
-//                                        NSLog("App: \(app)")
-//                                        NSLog("ID: \(app.id)")
-//                                        NSLog("NAME: \(app.name)")
-//                                        
-//                                        apps += [app]
-//                                    } else {
-//                                        NSLog("WRONG MAP")
-//                                    }
-                                }
-                                
-                                completion(apps: apps, error: nil)
-                                
-                            }
-                        } catch let error as NSError  {
-                            NSLog("Error Saving to DB: \(error), \(error.userInfo)")
+                    var apps:[App] = []
+                    
+                    //map objects
+                    for item in results {
+                        if let app = Mapper<App>().map(item) {
                             
-                            completion(apps: [], error: error)
+                            if DataManager.saveApp(app) {
+                                
+//                                NSLog("App: \(app)")
+//                                NSLog("ID: \(app.id)")
+//                                NSLog("NAME: \(app.name)")
+//                                NSLog("SUMMARY: \(app.summary)")
+//                                NSLog("PRICE: \(app.price)")
+//                                NSLog("TITLE: \(app.title)")
+//                                NSLog("COPY: \(app.copyright)")
+//                                NSLog("CATEGORY: \(app.category)")
+//                                NSLog("IMAGE: \(app.imageURL)")
+//                                NSLog("LINK: \(app.linkURL)")
+//                                NSLog("DATE: \(app.releaseDate)")
+                                apps += [app]
+                            }
+                        } else {
+                            NSLog("Error on Map Object")
                         }
-                        
                     }
                     
-                default:
-                    NSLog("Default failures")
+                    completion(apps: apps, error: nil)
                     
-                    if let error = response.result.error {
-                        NSLog("Error: %s", error.localizedDescription)
-                        
-                        //handle default error
-                        completion(apps: [], error: error)
-                        return
-                    }
                 }
+
             })
     }
 }
