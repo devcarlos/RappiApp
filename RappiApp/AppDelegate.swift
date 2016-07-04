@@ -124,7 +124,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: .Default)
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-        UINavigationBar.appearance().backgroundColor = UIColor.cyanColor()
+        UINavigationBar.appearance().backgroundColor = UIColor.clearColor()
         UINavigationBar.appearance().translucent = false
     }
 }

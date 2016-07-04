@@ -23,7 +23,7 @@ extension ListViewController : UICollectionViewDelegateFlowLayout {
     }
 }
 
-class ListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource  {
+class ListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIViewControllerTransitioningDelegate  {
     
     //MARK : IBOutlets
     
@@ -31,6 +31,11 @@ class ListViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var collectionView: UICollectionView!
     
     //MARK : Properties
+    
+    let customPresentAnimationController = CustomPresentAnimationController()
+    let customDismissAnimationController = CustomDismissAnimationController()
+    let customInteractionController = CustomInteractionController()
+    
     
     var apps:[App] = []
     var category:String = ""
@@ -56,10 +61,29 @@ class ListViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.loadData()
     }
     
-    //MARK : Controller Lifecycle
+//    override func viewWillAppear(animated: Bool) {
+//        super.viewWillAppear(animated)
+//        
+//        self.automaticallyAdjustsScrollViewInsets = false
+//        
+//    }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLayoutSubviews() {
+
+        NSLog("ORIGIN: \(self.view.frame.origin.y)")
+        
+        if self.view.frame.origin.y == 0 {
+            if let rect = self.navigationController?.navigationBar.frame {
+                let y = rect.size.height + rect.origin.y
+                self.tableView.contentInset = UIEdgeInsetsMake(y, 0, 0, 0)
+            }
+        } else if self.view.frame.origin.y == 44 || self.view.frame.origin.y == 64 {
+            self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        }
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
     
     override func didReceiveMemoryWarning() {
@@ -68,12 +92,13 @@ class ListViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func configureUI() {
-        //        self.view.backgroundColor = UIColor(hex: "#020617")
-        
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad  {
             self.collectionView.backgroundColor = UIColor.clearColor()
             self.tableView.hidden = true
             self.collectionView.hidden = false
+            
+            self.edgesForExtendedLayout = UIRectEdge.None
+            
         } else {
             self.tableView.backgroundColor = UIColor.clearColor()
             self.tableView.hidden = false
@@ -127,15 +152,17 @@ class ListViewController: UIViewController, UICollectionViewDelegate, UICollecti
         NSLog("SELECTED: \(indexPath.row)")
         
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("App") as! AppViewController
-        vc.modalTransitionStyle = .CrossDissolve
+        vc.transitioningDelegate = self
         vc.app = apps[indexPath.row]
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.presentViewController(vc, animated: true, completion: nil)
         
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 90
     }
+    
+    
     
     //MARK : CollectionView DataSource
     
@@ -165,9 +192,18 @@ class ListViewController: UIViewController, UICollectionViewDelegate, UICollecti
         NSLog("SELECTED: \(indexPath.row)")
         
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("App") as! AppViewController
-        vc.modalTransitionStyle = .CoverVertical
+        vc.transitioningDelegate = self
         vc.app = apps[indexPath.row]
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.presentViewController(vc, animated: true, completion: nil)
+    }
+    
+    
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return customPresentAnimationController
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return customDismissAnimationController
     }
 }
 

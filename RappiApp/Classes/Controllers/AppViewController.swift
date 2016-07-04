@@ -8,8 +8,19 @@
 
 import UIKit
 import AlamofireImage
+import StoreKit
 
-class AppViewController: UIViewController {
+struct Platform {
+    static let isSimulator: Bool = {
+        var isSim = false
+        #if arch(i386) || arch(x86_64)
+            isSim = true
+        #endif
+        return isSim
+    }()
+}
+
+class AppViewController: UIViewController, SKStoreProductViewControllerDelegate {
     
     //MARK : IBOutlets
     
@@ -38,6 +49,16 @@ class AppViewController: UIViewController {
         self.configureUI()        
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.summaryLabel.scrollEnabled = true
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     func configureUI(){
         
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad  {
@@ -47,6 +68,8 @@ class AppViewController: UIViewController {
         }
         
         if let app = app {
+            
+            self.summaryLabel.scrollEnabled = false
             
             self.nameLabel.text = app.name
             self.summaryLabel.text = app.summary
@@ -94,11 +117,43 @@ class AppViewController: UIViewController {
     
     @IBAction func downloadAction(sender: AnyObject) {
         
-        if let app = app {
-            NSLog("URL: \(app.linkURL)")
-            UIApplication.sharedApplication().openURL(NSURL(string: app.linkURL)!)
+        if Platform.isSimulator {
+            
+            self.showAlert("Using Simulator", message: "Please Use a Real Device to Test Download", handler: nil)
+            
+        } else {
+            if let app = app {
+                let url = NSURL(string: app.linkURL)!
+                let idStr = url.lastPathComponent!
+                let appID = idStr.substringFromIndex(idStr.startIndex.advancedBy(2))
+                NSLog("appID: \(appID)")
+                
+                openStoreProductWithiTunesItemIdentifier(appID)
+            }
         }
         
     }
     
+    func openStoreProductWithiTunesItemIdentifier(identifier: String) {
+        let storeViewController = SKStoreProductViewController()
+        storeViewController.delegate = self
+        
+        let parameters = [ SKStoreProductParameterITunesItemIdentifier : identifier]
+        storeViewController.loadProductWithParameters(parameters) { [weak self] (loaded, error) -> Void in
+            if loaded {
+                // Parent class of self is UIViewContorller
+                self?.presentViewController(storeViewController, animated: true, completion: nil)
+            }
+        }
+    }
+    func productViewControllerDidFinish(viewController: SKStoreProductViewController) {
+        viewController.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    @IBAction func doneAction(sender: AnyObject) {
+        
+        self.dismissViewControllerAnimated(false, completion: nil)
+    }
 }
+

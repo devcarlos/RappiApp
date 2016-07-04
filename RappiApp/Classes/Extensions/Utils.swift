@@ -9,6 +9,14 @@
 import UIKit
 import Foundation
 
+extension String {
+    var URLEncoded:String {
+        let unreservedChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~"
+        let unreservedCharset = NSCharacterSet(charactersInString: unreservedChars)
+        let encodedString = self.stringByAddingPercentEncodingWithAllowedCharacters(unreservedCharset)
+        return encodedString ?? self
+    }
+}
 // to display an alert message ViewControllers
 extension UIViewController {
     func showAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)?) {

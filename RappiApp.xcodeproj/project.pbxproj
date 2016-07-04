@@ -350,6 +350,7 @@
 				TargetAttributes = {
 					13A348901D0719D500A45223 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = NEHEF8LFFZ;
 					};
 				};
 			};
@@ -576,10 +577,13 @@
 			baseConfigurationReference = 6F57087092C561F9DDE9DCCF /* Pods-RappiApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/RappiApp/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kurrentap.RappiApp;
 				PRODUCT_NAME = RappiApp;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -589,10 +593,13 @@
 			baseConfigurationReference = 1FB5DC1D851CE1EC00D544EB /* Pods-RappiApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/RappiApp/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kurrentap.RappiApp;
 				PRODUCT_NAME = RappiApp;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

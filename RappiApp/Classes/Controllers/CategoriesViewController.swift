@@ -56,7 +56,6 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func configureUI() {
-        //        self.view.backgroundColor = UIColor(hex: "#020617")
         self.tableView.backgroundColor = UIColor.clearColor()
     }
 
