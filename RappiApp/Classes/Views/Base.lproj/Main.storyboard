@@ -189,7 +189,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uC5-H0-DLH">
-                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" red="0.99215686270000003" green="0.45882352939999999" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="hn1-XF-1wE">
                                     <size key="itemSize" width="180" height="180"/>
@@ -225,7 +225,7 @@
                         <color key="backgroundColor" red="0.99215686270000003" green="0.45882352939999999" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="FD2-1s-oVh" firstAttribute="leading" secondItem="uC5-H0-DLH" secondAttribute="leading" id="9e4-qf-u1X"/>
-                            <constraint firstItem="uC5-H0-DLH" firstAttribute="top" secondItem="Guf-Pn-CVa" secondAttribute="bottom" constant="44" id="DNE-WE-NFq"/>
+                            <constraint firstItem="uC5-H0-DLH" firstAttribute="top" secondItem="Guf-Pn-CVa" secondAttribute="bottom" id="DNE-WE-NFq"/>
                             <constraint firstItem="FD2-1s-oVh" firstAttribute="trailing" secondItem="uC5-H0-DLH" secondAttribute="trailing" id="II2-gZ-Y7t"/>
                             <constraint firstItem="uC5-H0-DLH" firstAttribute="leading" secondItem="r9E-yK-dEU" secondAttribute="leading" id="KYy-lP-UZu"/>
                             <constraint firstItem="aDW-bq-Wxc" firstAttribute="top" secondItem="uC5-H0-DLH" secondAttribute="bottom" id="k2d-fE-rZP"/>

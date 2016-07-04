@@ -70,15 +70,18 @@ class ListViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidLayoutSubviews() {
 
+        //FIX the scroll insets on DISMISS back
         NSLog("ORIGIN: \(self.view.frame.origin.y)")
         
         if self.view.frame.origin.y == 0 {
             if let rect = self.navigationController?.navigationBar.frame {
                 let y = rect.size.height + rect.origin.y
                 self.tableView.contentInset = UIEdgeInsetsMake(y, 0, 0, 0)
+                self.collectionView.contentInset = UIEdgeInsetsMake(y, 0, 0, 0)
             }
         } else if self.view.frame.origin.y == 44 || self.view.frame.origin.y == 64 {
             self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+            self.collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         }
     }
     
