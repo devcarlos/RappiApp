@@ -10,6 +10,7 @@ Test Project App for Rappi
 * Support for `Core Data` cache data
 * Support for `ObjectMapper` to map data objects
 * Support for `ReachabilitySwift` to handle Internet online/offline check
+* Support for `App Store` download on `real device only`
 
 #RELEASE 1.0
 CocoaPods and Fixes.
